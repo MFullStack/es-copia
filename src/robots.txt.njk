@@ -1,0 +1,16 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Allow: /
+# Permitimos que Google rastree las imágenes para SEO visual
+Allow: /assets/img/
+
+# Bloqueamos solo carpetas de código interno
+Disallow: /vendor/
+Disallow: /php/
+Disallow: /forms/
+
+# Usamos la variable global para el sitemap
+Sitemap: {{ site.url }}/sitemap.xml

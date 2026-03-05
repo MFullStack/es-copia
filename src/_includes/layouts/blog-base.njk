@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+---
+
+{# 1. No necesitas llamar al header aquí, ya lo hace base.njk #}
+
+<main class="main-blog">
+  <div class="container py-5 mt-5">
+    {# 2. Aquí es donde Eleventy inyectará el contenido de tus artículos .md #}
+    <article class="blog-post">
+      {{ content | safe }}
+    </article>
+  </div>
+</main>
+
+{# 3. No necesitas llamar al footer aquí, ya lo hace base.njk #}

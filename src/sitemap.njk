@@ -1,0 +1,27 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {%- for page in collections.all %}
+    {%- if page.url and not page.data.eleventyExcludeFromCollections %}
+      <url>
+        <loc>{{ site.url }}{{ page.url | url }}</loc>
+        <lastmod>{{ page.date.toISOString() }}</lastmod>
+        <changefreq>{{ page.data.changefreq if page.data.changefreq else "monthly" }}</changefreq>
+        <priority>{{ page.data.priority if page.data.priority else "0.7" }}</priority>
+        
+        {# Etiqueta de idioma actual #}
+        <xhtml:link 
+          rel="alternate" 
+          hreflang="{{ page.data.lang if page.data.lang else 'es' }}" 
+          href="{{ site.url }}{{ page.url | url }}" />
+
+        {# Nota: Si en el futuro usas un sistema de traducción para enlazar 
+           posts (ej. un campo 'translationKey'), aquí es donde buscaríamos 
+           la versión opuesta para poner el hreflang cruzado #}
+      </url>
+    {%- endif %}
+  {%- endfor %}
+</urlset>

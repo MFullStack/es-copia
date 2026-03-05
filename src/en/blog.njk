@@ -1,0 +1,70 @@
+---
+layout: layouts/base.njk
+title: "Sailing & Lifestyle Blog | RumboMed"
+description: "Expert advice and practical guides for sea lovers on the Costa del Sol."
+lang: en
+permalink: "/en/blog/index.html"
+---
+
+<main class="main">
+
+  {# 1. Cabecera (Bootstrap Page Title) #}
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url(/assets/img/travel/rumbomed-header.webp);">
+    <div class="container position-relative">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/{{ lang }}/">Home</a></li>
+          <li class="current">Blog</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  {# 2. Sección de Posts (Estructura Bootstrap Cronológica) #}
+  <section id="blog-posts" class="blog-posts section">
+    <div class="container">
+      <div class="row gy-4">
+
+        {% set postsCount = 0 %}
+        {# Filtramos y ordenamos: el 'reverse' pone la fecha más reciente primero #}
+        {% for post in collections.post | reverse %}
+          {% if post.data.lang == lang %}
+            {% set postsCount = postsCount + 1 %}
+            
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+              <article>
+                
+                {# Imagen del post #}
+                <div class="post-img">
+                  <img src="{{ post.data.featured_image or '/assets/img/blog/default-boat.jpg' }}" alt="{{ post.data.title }}" class="img-fluid">
+                </div>
+
+                <p class="post-category">{{ post.data.category or "Sailing" }}</p>
+
+                {# Título con enlace automático al archivo .md #}
+                <h2 class="title">
+                  <a href="{{ post.url }}">{{ post.data.title }}</a>
+                </h2>
+
+                <div class="d-flex align-items-center">
+                  <img src="/assets/img/blog/foto.webp" alt="Author" class="img-fluid post-author-img flex-shrink-0">
+                  <div class="post-meta">
+                    <p class="post-author">{{ post.data.author or "RumboMed Team" }}</p>
+                    <p class="post-date">
+                      {# Filtro de fecha de tu eleventy.js #}
+                      <time datetime="{{ post.date | dateIso }}">{{ post.date | postDate(lang) }}</time>
+                    </p>
+                  </div>
+                </div>
+
+              </article>
+            </div>{% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+</main>

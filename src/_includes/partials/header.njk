@@ -1,0 +1,95 @@
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+    <a class="logo d-flex align-items-center me-auto me-xl-0" href="/{{ lang }}/">
+      <h1 class="sitename">Rumbomed</h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        {# Usamos la variable lang para que los enlaces apunten al idioma correcto #}
+        <li><a href="/{{ lang }}/" class="{% if page.url == '/' + lang + '/' %}active{% endif %}">
+          {{ "Inicio" if lang == "es" else "Home" }}
+        </a></li>
+        
+        <li class="dropdown"><a href="#"><span>{{ "Experiencias" if lang == "es" else "Experiences" }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+    <li>
+      <a href="/{{ lang }}/{{ 'salidasgrupales' if lang == 'es' else 'sharedboat-experience' }}/">
+        {{ "Salidas Grupales" if lang == "es" else "Shared Boat Trips" }}
+      </a>
+    </li>
+    <li>
+      <a href="/{{ lang }}/{{ 'avistamientodelfines' if lang == 'es' else 'sighting-dolphins' }}/">
+        {{ "Avistamiento de Delfines" if lang == "es" else "Dolphin Watching" }}
+      </a>
+    </li>
+    <li>
+      <a href="/{{ lang }}/{{ 'puestasdesol' if lang == 'es' else 'sunset-experience' }}/">
+        {{ "Puestas de Sol" if lang == "es" else "Sunset Experience" }}
+      </a>
+    </li>
+    <li>
+      <a href="/{{ lang }}/{{ 'despedidasdesoltera' if lang == 'es' else 'bachelor-party' }}/">
+        {{ "Despedidas de Soltera" if lang == "es" else "Bachelorette Parties" }}
+      </a>
+    </li>
+    <li>
+      <a href="/{{ lang }}/{{ 'alquilerconcapitan' if lang == 'es' else 'rent-boat-with-captain' }}/">
+        {{ "Alquiler con Capitán" if lang == "es" else "Rent with Captain" }}
+      </a>
+    </li>
+    <li>
+      <a href="/{{ lang }}/{{ 'pesca' if lang == 'es' else 'fishing-experience' }}/">
+        {{ "Pesca" if lang == "es" else "Fishing" }}
+      </a>
+    </li>
+  </ul>
+        </li>
+
+        <li>
+  <a href="/{{ lang }}/{{ 'barcos' if lang == 'es' else 'fleet' }}/" 
+     class="{% if '/barcos/' in page.url or '/fleet/' in page.url %}active{% endif %}">
+    {{ "Barcos" if lang == "es" else "Fleet" }}
+  </a>
+</li>
+
+       <li class="dropdown">
+  <a href="#">
+    <span>{{ "Servicios" if lang == "es" else "Services" }}</span> 
+    <i class="bi bi-chevron-down toggle-dropdown"></i>
+  </a>
+  
+  <ul>
+    <li>
+      {# CORRECCIÓN 2: La URL y el Texto del enlace #}
+      <a href="/{{ lang }}/{{ 'servicios' if lang == 'es' else 'maintenance-yachts' }}/">
+        {{ "Mantenimiento Barcos" if lang == "es" else "Maintenance-yachts" }}
+      </a>
+    </li>
+  </ul>
+</li>
+
+        <li><a href="/{{ lang }}/blog/" class="{% if '/blog/' in page.url %}active{% endif %}">Blog</a></li>
+        
+        <li><a href="/{{ lang }}/contacto/" class="{% if '/contacto/' in page.url %}active{% endif %}">
+          {{ "Contacto" if lang == "es" else "Contact" }}
+        </a></li>
+
+        <li class="dropdown">
+          <a href="#"><i class="bi bi-globe" style="margin-right: 5px;"></i><span>{{ lang | upper }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="/es/">🇪🇸 Español</a></li>
+            <li><a href="/en/">🇬🇧 English</a></li>
+          </ul>
+        </li>
+        
+        <li><a class="btn-getstarted" href="https://wa.me/34687370895" target="_blank">
+          {{ "Reserva ahora" if lang == "es" else "Book now" }}
+        </a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+  </div>
+</header>

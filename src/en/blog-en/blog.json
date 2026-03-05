@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/blog-base.njk",
+  "permalink": "/en/blog-en/{{ title | slugify }}/index.html",
+  "lang": "en",
+  "category": "Technical"
+}

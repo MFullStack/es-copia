@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+title: "404 - Página no encontrada | Rumbomed"
+description: "Parece que tu rumbo se ha desviado. La página que buscas no está disponible."
+heroImage: "/assets/img/travel/rumbomed-header.webp"
+permalink: /es/404.html
+eleventyExcludeFromCollections: true
+---
+
+<main class="main">
+
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url('{{ heroImage }}');">
+    <div class="container position-relative">
+      <h1>404</h1>
+      <p>Parece que tu rumbo se ha desviado. La experiencia o embarcación que buscas no se encuentra en esta ruta.</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/es/">Inicio</a></li>
+          <li class="current">404</li>
+        </ol>
+      </nav>
+    </div>
+  </div><section id="error-404" class="error-404 section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="error-wrapper">
+        <div class="row align-items-center">
+          
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="error-illustration">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <div class="circle circle-1"></div>
+              <div class="circle circle-2"></div>
+              <div class="circle circle-3"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="error-content">
+              <span class="error-badge" data-aos="zoom-in" data-aos-delay="400">Aviso</span>
+              <h1 class="error-code" data-aos="fade-up" data-aos-delay="500">404</h1>
+              <h2 class="error-title" data-aos="fade-up" data-aos-delay="600">Página no encontrada</h2>
+              <p class="error-description" data-aos="fade-up" data-aos-delay="700">
+                La embarcación o experiencia que buscas ha cambiado de rumbo, ha sido eliminada o no se encuentra disponible temporalmente.
+              </p>
+
+              <div class="error-actions" data-aos="fade-up" data-aos-delay="800">
+                <a href="/es/" class="btn-home">
+                  <i class="bi bi-house-door"></i> Volver al Inicio
+                </a>
+                <a href="/es/contacto/" class="btn-help">
+                  <i class="bi bi-question-circle"></i> Centro de Ayuda
+                </a>
+              </div>
+
+              <div class="error-suggestions" data-aos="fade-up" data-aos-delay="900">
+                <h3>Te sugerimos:</h3>
+                <ul>
+                  <li><a href="/es/#featured-tours"><i class="bi bi-arrow-right-circle"></i> Explorar experiencias</a></li>
+                  <li><a href="/es/contacto/"><i class="bi bi-arrow-right-circle"></i> Contactar con soporte</a></li>
+                  <li><a href="/es/"><i class="bi bi-arrow-right-circle"></i> Volver a la página principal</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

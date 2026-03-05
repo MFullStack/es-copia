@@ -1,0 +1,23 @@
+{
+  "name": "rumbomed-web",
+  "version": "1.0.0",
+  "description": "Sitio web multilingüe RumboMed - Benalmádena",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "keywords": [
+    "nautical",
+    "eleventy",
+    "rumbomed"
+  ],
+  "author": "RumboMed",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "luxon": "^3.7.2"
+  }
+}

@@ -1,0 +1,148 @@
+---
+layout: layouts/base.njk
+title: "Contacto | RumboMed Alquiler de Barcos"
+description: "Contacta con RumboMed para reservar tu experiencia náutica en la Costa del Sol. Estamos en Málaga, Marbella y Estepona."
+heroImage: "/assets/img/travel/rumbomed-header.webp"
+lang: es
+---
+
+<main class="main">
+
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url('{{ heroImage }}');">
+    <div class="container position-relative">
+      <h1>Contacto</h1>
+      <p>Estamos a tu disposición para resolver cualquier duda sobre tu próximo alquiler o experiencia en el mar.</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/es/">Inicio</a></li>
+          <li class="current">Contacto</li>
+        </ol>
+      </nav>
+    </div>
+  </div><section id="contact" class="contact section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4 mb-5">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-info-box">
+            <div class="icon-box">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <div class="info-content">
+              <h4>Nuestros Puertos</h4>
+              <p>Málaga · Marbella · Estepona</p>
+              <p>Costa del Sol, España</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-info-box">
+            <div class="icon-box">
+              <i class="bi bi-envelope"></i>
+            </div>
+            <div class="info-content">
+              <h4>Correo Electrónico</h4>
+              <p>info@rumbomed.com</p>
+              <p>reservas@rumbomed.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="contact-info-box">
+            <div class="icon-box">
+              <i class="bi bi-headset"></i>
+            </div>
+            <div class="info-content">
+              <h4>Horario de Atención</h4>
+              <p>Lunes - Domingo: 09:00 - 20:00</p>
+              <p>Atención personalizada en puerto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="map-section" data-aos="fade-up" data-aos-delay="200">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51243.2045564887!2d-4.935292786358485!3d36.50100782740927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd73270a64099515%3A0x6b8630739c9f280b!2sPuerto%20Ban%C3%BAs!5e0!3m2!1ses!2ses!4v1707400000000!5m2!1ses!2ses" 
+        width="100%" 
+        height="500" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="container form-container-overlap" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="contact-form-wrapper">
+            <h2 class="text-center mb-4">Haznos una Consulta</h2>
+
+            <form action="/forms/contact.php" method="post" class="php-email-form">
+              <div class="row g-3">
+                
+                <div class="col-md-6">
+                  <div class="form-group input-with-icon">
+                    <i class="bi bi-person"></i>
+                    <input type="text" class="form-control" name="name" placeholder="Tu Nombre" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group input-with-icon">
+                    <i class="bi bi-telephone"></i>
+                    <input type="tel" class="form-control" name="phone" placeholder="Teléfono de contacto" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group input-with-icon">
+                    <i class="bi bi-envelope"></i>
+                    <input type="email" class="form-control" name="email" placeholder="Correo Electrónico" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group input-with-icon">
+                    <i class="bi bi-people"></i>
+                    <select class="form-control form-select shadow-none" name="people" required>
+                      <option value="" selected disabled>Nº de personas (aprox.)</option>
+                      <option value="1-4">1 a 4 personas</option>
+                      <option value="5-8">5 a 8 personas</option>
+                      <option value="9+">Más de 8 personas</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group input-with-icon">
+                    <i class="bi bi-info-circle"></i>
+                    <input type="text" class="form-control" name="subject" placeholder="¿Qué experiencia buscas? (Ej: Atardecer, Pesca, Cumpleaños...)" required>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-group input-with-icon">
+                    <i class="bi bi-chat-dots message-icon"></i>
+                    <textarea class="form-control" name="message" placeholder="Dinos cómo podemos ayudarte a planear tu día..." rows="6" required></textarea>
+                  </div>
+                </div>
+
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn-submit px-5 py-3 mt-3">ENVIAR CONSULTA</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section></main>

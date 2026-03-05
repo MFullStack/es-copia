@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# 1. FORZAR HTTPS Y ELIMINAR WWW
+RewriteCond %{HTTP_HOST} ^www\.rumbomed\.com [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://rumbomed.com/$1 [L,R=301]
+
+# 2. REDIRIGIR LA RAÍZ (rumbomed.com) A ESPAÑOL POR DEFECTO
+# Solo si la URL está vacía, mandamos a /es/
+RewriteRule ^$ /es/ [L,R=301]
+
+# 3. QUITAR .HTML Y FORZAR SLASH FINAL (/)
+# Esto es vital para las "Pretty URLs" de Eleventy en ambos idiomas
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP/
+RewriteRule ^(.+)\.html$ https://rumbomed.com/$1/ [R=301,L]
+
+# 4. ASEGURAR QUE EL SERVIDOR ENCUENTRE EL INDEX
+DirectoryIndex index.html
+
+# 5. ERRORES 404 POR IDIOMA (Opcional)
+# Si quieres que el error salga en el idioma que estaba navegando
+RewriteRule ^es/.*$ /es/404/index.html [L]
+RewriteRule ^en/.*$ /en/404/index.html [L]
